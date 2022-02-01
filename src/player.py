@@ -16,4 +16,5 @@ class Player:
             self.world[y][x] = self.logo
             self.world = self.world
         except IndexError:
-            raise IndexError('You reached the maximum or minimum size of the world.')
+            raise IndexError(
+                'You reached the maximum or minimum size of the world.')

@@ -1,8 +1,9 @@
 import random
 
+
 class Map:
 
-    def __init__(self, x = 0, y = 0, r: bool = False, fill = None):
+    def __init__(self, x=0, y=0, r: bool = False, fill=None):
         # check for random world
         self.r = r
         if self.r:
@@ -18,7 +19,7 @@ class Map:
             self.fill = fill
 
         # generate world
-        world=[]
+        world = []
         for y in range(self.y):
             world.append([])
             for x in range(self.x):
@@ -29,7 +30,7 @@ class Map:
     def out(self):
         for y in range(len(self.world)):
             for x in range(len(self.world[y])):
-                print(self.world[y][x], end = '')
+                print(self.world[y][x], end='')
                 if x == len(self.world[y])-1:
                     print('\n')
 
@@ -38,9 +39,9 @@ class Map:
         if content != None:
             if content[0] <= len(self.world)-1:
                 self.world[content[0]].append(content[1])
-            self.world=self.world
+            self.world = self.world
 
         if column != None:
             for _ in range(column[0]):
                 self.world.append(column[1])
-            self.world=self.world
+            self.world = self.world
