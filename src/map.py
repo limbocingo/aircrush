@@ -22,7 +22,7 @@ class Map:
         for y in range(self.y):
             world.append([])
             for x in range(self.x):
-                world[y].append(fill)
+                world[y].append(self.fill)
         self.world = world
 
     # print world

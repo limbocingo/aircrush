@@ -5,14 +5,15 @@ class Player:
         self.world = world
         self.stroke = stroke
 
+    # teleport player to a location
     def teleport(self, x, y):
-        for _y in range(len(self.world)):
-            for _x in range(len(self.world[x])):
-                if self.world[_y][_x] == self.logo:
-                    self.world[_y][_x] = self.stroke
-
         try:
-            self.world[x][y] = self.logo
+            for _y in range(len(self.world)):
+                for _x in range(len(self.world[_y])):
+                    if self.world[_y][_x] == self.logo:
+                        self.world[_y][_x] = self.stroke
+
+            self.world[y][x] = self.logo
             self.world = self.world
         except IndexError:
             raise IndexError('You reached the maximum or minimum size of the world.')
